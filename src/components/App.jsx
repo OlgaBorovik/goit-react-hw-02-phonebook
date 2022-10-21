@@ -28,8 +28,8 @@ class App extends React.Component {
         <h2>Contacts</h2>
         <div>
           <ul>
-            {this.state.contacts.map(({id, name}) => (
-              <li key={id}>{name}</li>
+            {this.state.contacts.map(({id, name, number}) => (
+              <li key={id}>{name}: {number}</li>
             ))}
         </ul>
          
