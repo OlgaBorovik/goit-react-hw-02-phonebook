@@ -29,7 +29,9 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input
+                <label>
+                    Name
+                    <input
                     type="text"
                     name="name"
                     onChange={this.handleInputChange}
@@ -38,6 +40,9 @@ class Form extends React.Component {
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                 />
+                </label>
+                <label>
+                    Number
                 <input
                     type="tel"
                     name="number"
@@ -47,6 +52,7 @@ class Form extends React.Component {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                 />
+                </label>
                 <button type="submit">Add contact</button>
             </form>
         )
