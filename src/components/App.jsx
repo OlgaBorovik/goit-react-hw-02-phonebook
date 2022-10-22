@@ -28,6 +28,12 @@ class App extends React.Component {
     this.setState({filter: event.target.value})
   }
 
+  onDeleteContact = ({ id }) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   render() {
     let filteredContacts = this.state.contacts;
     if (this.state.filter) {
@@ -48,6 +54,7 @@ class App extends React.Component {
         />
         <ContactList
           contacts={filteredContacts}
+          onDelete={this.onDeleteContact}
 
         />
         

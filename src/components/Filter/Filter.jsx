@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 
  export const Filter = ({ onChange, value }) => {
     return <label>
@@ -13,3 +14,8 @@ import React from "react";
         </label>
 }
 
+Filter.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+   
+}

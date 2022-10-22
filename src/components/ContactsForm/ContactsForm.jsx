@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types"
 import React from "react";
+
 
 class ContactsForm extends React.Component {
     state = {
@@ -10,7 +12,7 @@ class ContactsForm extends React.Component {
 
    
     handleInputChange = (event) => {
-        const {name, value} = event.currentTarget
+    const {name, value} = event.currentTarget
     this.setState({[name]: value, id: nanoid(5)})
   }
 
@@ -59,5 +61,8 @@ class ContactsForm extends React.Component {
     }
 }
 
+ContactsForm.propTypes = {
+    onSubmitProp: PropTypes.func.isRequired
+}
 
 export default ContactsForm
