@@ -2,6 +2,7 @@ import React from "react";
 import ContactsForm from "./ContactsForm/ContactsForm"
 import ContactList from "./ContactList/ContactList"
 import { Filter } from "./Filter/Filter"
+import {Section, Title, Container} from "./section.styled"
 // import { nanoid } from 'nanoid'
 
 
@@ -42,12 +43,15 @@ class App extends React.Component {
       });
     }
     return (
-      <div>
-      <h2>Phonebook</h2>
+      <Section>
+        <Container>
+        <Title>Phonebook</Title>
         <ContactsForm
           onSubmitProp={this.formSubmitHandler}
         />
-      <h2>Contacts</h2>
+        </Container>
+        <Container>
+        <Title>Contacts</Title>
         <Filter
           onChange={this.filterChangeHandler}
           value={this.state.filter}
@@ -55,11 +59,9 @@ class App extends React.Component {
         <ContactList
           contacts={filteredContacts}
           onDelete={this.onDeleteContact}
-
         />
-        
-
-      </div>
+      </Container>
+      </Section>
     )
   }
 
