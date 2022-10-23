@@ -10,11 +10,10 @@ class ContactsForm extends React.Component {
         number: '',
     }
 
-   
     handleInputChange = (event) => {
     const {name, value} = event.currentTarget
     this.setState({[name]: value, id: nanoid(5)})
-  }
+    }
 
   reset = () => {
     this.setState({name: '', number: ''})
